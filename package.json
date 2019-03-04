@@ -1,0 +1,14 @@
+{
+  "name": "lamassu-e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "author": "",
+  "license": "unlicense",
+  "dependencies": {
+    "cypress": "^3.1.5"
+  }
+}

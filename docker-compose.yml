@@ -1,0 +1,18 @@
+version: '3'
+services:
+  machine:
+    image: lamassu-machine-e2e
+    ports:
+      - "8080:8080"
+      - "8000:8000"
+  cypress:
+    image: cypress
+    build: ./
+    volumes:
+      - ./cypress/screenshots:/cypress/screenshots
+      - ./cypress/videos:/cypress/videos
+    depends_on:
+      - machine
+    environment:
+      - CYPRESS_baseUrl=http://machine:8000
+    command: npm run test
